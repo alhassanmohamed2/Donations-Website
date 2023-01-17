@@ -14,16 +14,16 @@
 
     <div class="row">
         <?php for($i = 0; $i < count($names); $i++): ?>
-        
-            <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                <img src="<?= $images_path[$i] ?>" class="card-img-top col">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $names[$i] ?></h5>
-                    <a href="products?type=<?= $names[$i] ?>" class="btn btn-primary">اشتري</a>
-                </div>
+
+        <div class="card col-lg-3 col-md-6 col-sm-12 col-xs-12">
+            <img src="<?= $images_path[$i] ?>" class="card-img-top col">
+            <div class="card-body">
+                <h5 class="card-title"><?= $names[$i] ?></h5>
+                <a href="products?type=<?= $names[$i] ?>" class="btn btn-primary">اشتري</a>
             </div>
-       
+        </div>
+
         <?php endfor; ?>
     </div>
-
-    <?php require('partials/footer.php'); ?>
+</div>
+<?php require('partials/footer.php'); ?>

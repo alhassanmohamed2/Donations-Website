@@ -20,7 +20,7 @@
 .main-text {
   position: absolute;
   color: white;
-  font-size: 5rem;
+  font-size: 1.5rem;
   z-index: 3;
 }
 
@@ -39,5 +39,8 @@ hr {
   margin-top: 25px;
 }
 .card {
-  margin: 10px;
+   margin: 10px;
+}
+.row {
+    margin: 15px;
 }

@@ -1,5 +1,7 @@
  <?php
+use App\Core\Router;
 
+   $router = new Router();
     $router->get('', 'PagesController@home');
     $router->get('about', 'PagesController@about');
     $router->get('admin', 'PagesController@admin');

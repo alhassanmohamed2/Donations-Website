@@ -1,4 +1,4 @@
-<?php require('partials/head.php');?>
+<?php require('partials/head.php'); ?>
 <link rel="stylesheet" href="../../../public/css/admin.css">
 
 <section class="vh-100">

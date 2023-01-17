@@ -20,5 +20,8 @@ function view($name, $data = [])
  */
 function redirect($path)
 {
-    header("Location: /{$path}");
+    echo "<script>
+        window.location.href='/$path';
+        </script>";
+    // header("Location: /{$path}");
 }

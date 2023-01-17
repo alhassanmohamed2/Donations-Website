@@ -124,7 +124,7 @@ class QueryBuilder
 
             $statement->execute();
         } catch (\Exception $e) {
-            //
+            
         }
     }
 

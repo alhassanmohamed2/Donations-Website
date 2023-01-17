@@ -38,12 +38,12 @@ class PagesController
     public function about()
 
     {
-        $old_clients_data = App::get('database')->selectAll('about_data', conditions: ['completed' => 1]);
+        $old_clients_data = App::get('database')->selectAll('about_data',[], ['completed' => 1]);
         return view('about', ["data_array" => $old_clients_data]);
     }
     public function admin()
     {
-        session_start();
+        
         if (isset($_SESSION["email"]) && isset($_SESSION["pass"])) {
             redirect("dashboard");
         } else {

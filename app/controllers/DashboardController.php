@@ -8,10 +8,10 @@ class DashboardController
 {
     public function index()
     {
-        session_start();
+       
         if (isset($_SESSION["email"]) && isset($_SESSION["pass"])) {
-            $old_clients_data = App::get('database')->selectAll('about_data', conditions: ['completed' => 1]);
-            $new_clients_data = App::get('database')->selectAll('about_data', conditions: ['completed' => 0]);
+            $old_clients_data = App::get('database')->selectAll('about_data',[] ,['completed' => 1]);
+            $new_clients_data = App::get('database')->selectAll('about_data',[] , ['completed' => 0]);
             $start = 0;
             $end = 21;
             return view('dashboard', [
@@ -42,7 +42,8 @@ class DashboardController
             'fal_type' => $_POST['type'],
             'youtupe_link' => $youtupe_link,
             'price' => $_POST['price'],
-            'phone' => $_POST['countrycode'] . $_POST['phone']
+            'phone' => $_POST['countrycode'] . $_POST['phone'],
+             'completed' => 1,
         ]);
         return view('dashboard');
     }
@@ -70,8 +71,8 @@ class DashboardController
         $youtupe_link = "https://www.youtube.com/embed/" . $my_array_of_vars['v'] . "?rel=0";
         App::get('database')->update(
             "about_data",
-            parameters: ['youtupe_link' => $youtupe_link, 'completed' => 1, "price" => $_POST['price']],
-            conditions: ['id' => array_keys($_POST)[1]]
+           ['youtupe_link' => $youtupe_link, 'completed' => 1, "price" => $_POST['price']],
+          ['id' => array_keys($_POST)[2]]
         );
         redirect('dashboard');
     }
